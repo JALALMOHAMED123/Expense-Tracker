@@ -9,13 +9,13 @@ form.addEventListener('submit', function(event) {
 
     localStorage.setItem(expensement,JSON.stringify(obj));
     showDetails(expensement, desc, category);
-    
+    form.reset(); 
 });
 function showDetails(expensement, desc, category){
     const parent=document.querySelector('ul');
     const li=document.createElement('li');
 
-    li.innerHTML=`${expensement} - ${desc} - ${category} <button type='button' id='Delete'>Delete</button> <button type='button' id='edit'>Edit</button>`;
+    li.innerHTML=`${expensement} - ${desc} - ${category} &nbsp;<button type='button' id='Delete' class='btn'>Delete</button>&nbsp; <button type='button' class='btn' id='edit'>Edit</button>`;
     parent.appendChild(li);
 
     const deletebutton=li.querySelector('#Delete');
